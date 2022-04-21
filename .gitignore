@@ -1,0 +1,9 @@
+.env
+__pycache__
+man
+woman
+config.py
+females20.json
+males20.json
+test.html
+regfromjson.html

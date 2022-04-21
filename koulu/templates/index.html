@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1>Home page</h1>
+<!-- BOOTSTRAP CARDS -->
+<div class="container mt-5">
+    <h1 style="text-align:center;">Lets Tweet</h1>
+
+    <div class="row align-items-start">
+
+        <div class="col-12 col-lg-7">   
+            {% for tweet in tweets.items %}
+            <div class="card mt-3 shadow shadow-intensity-xl" style="padding-bottom:0px;">
+                <div class="card-header bg-success text-white mt-1 py-1">
+                    <h2>{{ tweet.title }}</h2>
+                </div>
+                <div class="card-body">
+                    <img class="account-img roundpic" src="{{ url_for('static',filename='profile_images/'+tweet.author.image_file) }}" style="float:left;margin-right:20px;">
+                    <blockquote class="blockquote mb-0">
+                    <p class="text-dark">{{ tweet.content }}</p>
+                    <footer class="blockquote-footer bg-secondary text-light p-1" style="clear:both;margin-top:20px;font-size:18px;">
+                        <a class="text-light" style="font-size:18px;" href="{{ url_for('user_viestit', username=tweet.author.username)}}">{{ tweet.author.neckname }}</a> 
+                        <cite title="Source Title" style="float:right;">{{ tweet.date_posted.strftime('%d-%m-%Y') }}</cite>
+                    
+                    </footer>
+                    {% if tweet.author == current_user %}
+                        <div class="container d-flex justify-content-end">
+                            <a class="btn btn-warning btn-sm m-1" href="{{ url_for('tweet', tweet_id=tweet.id) }}">Options</a>
+                        </div>
+                    {% endif %}
+                    
+                    </blockquote>
+                    
+                </div>
+                
+            </div>        
+                 
+            {% endfor %}
+            <div class="container  d-flex justify-content-end">
+            {% for page_num in tweets.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+            {% if page_num %}
+            {% if tweets.page == page_num %}
+                <a class="btn btn-outline-primary bg-secondary text-white mb-4 mx-1" href="{{url_for('home', page=page_num)}}">{{page_num}}</a>
+                {% else %}
+                <a class="btn btn-success mb-4 mx-1" href="{{url_for('home', page=page_num)}}">{{page_num}}</a>
+            {% endif %}
+            {% else %}
+                ...
+            {% endif %}
+        {% endfor %} 
+        </div> 
+    </div>
+        <div class="col-12 col-lg-5">  
+            <div class="card mt-3">
+                <div class="card-header bg-success text-white mt-3">
+                    <h2>News feeds goes here</h2>
+                </div>
+                <div class="card-body">
+                    <p style="color:black;">News articles</p>
+                    <footer class="blockquote-footer"><a href="">card footer goes here</a> <cite title="Source Title">may be somthing else</cite></footer>
+                    
+                </div>
+            </div>        
+        </div> 
+            
+    </div> <!-- row -->
+    
+
+{% endblock %}

@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.navbar{
+    width: 100%;
+    margin: 0;
+}
+
+.login-inline{
+    width: 80px;
+    padding: 0 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.login-inline1{
+    width: 80px;
+    padding: 0 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+
+.nav-login{
+    border-radius: 5px;
+    margin-right: 5px;
+    height: 25px;
+    line-height: 25px;
+    padding-top: 0;
+}
+
+.inlinebtn{
+    width: 70px;
+    height: 30px;
+    padding-top: 0;
+}
+
+#regform{
+    /* background-color:green; */
+    color:white;
+    border:1px solid green;
+    border-radius:10px;
+    width:400px;
+    padding:10px;
+    margin:10px auto;
+}
+
+.loginform{
+    /* background-color:green; */
+    color:white;
+    border:1px solid green;
+    border-radius:10px;
+    width:400px;
+    padding:10px;
+    margin:10px auto;
+    padding: 20px;
+}
+
+#source{
+    line-height: 40px;
+}
+legend{
+    text-align: center;
+}
+
+.profileUL > li{
+    list-style: none;
+    background-color: rgb(87, 140, 239);
+    margin: 0;
+    padding: 10px;
+}
+
+.profileUL > li:nth-child(odd){
+    background-color: rgb(69, 149, 55);
+    color: white;
+}
+.profileUL > li> img{
+    margin-bottom: 20px;
+}
+
+.test{
+    margin-top: -40px;
+}
+
+.full-width{
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.full-width text-white{
+    padding-bottom: 20px;
+}
+.roundpic{
+    border-radius: 50%;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}

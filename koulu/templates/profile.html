@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="container" style="width:500px;">
+        <h1>{{ current_user.username.capitalize() }}</h1>
+        <ul class="profileUL">
+            <li style="background-color: cornflowerblue;">
+                <img src="{{ image_file }}">
+            </li>
+            <li>
+                <strong>Neckname: </strong>{{ current_user.neckname }}
+            </li>
+            <li>
+                <strong>Fullname: </strong>{{ current_user.username.capitalize()}}
+                - {{ current_user.age}} years old
+            </li>
+            <li>
+                <strong>Email: </strong>{{ current_user.email }}
+            </li>
+            <li>
+                <strong>Gender: </strong>{{ current_user.gender }}
+            </li>
+            <li>
+                <strong>Country: </strong>{{ current_user.location }}
+            </li>
+            <li>
+                <strong>Favourite places: </strong>{{ current_user.description }}
+            </li>
+    </div>
+{% endblock content %}

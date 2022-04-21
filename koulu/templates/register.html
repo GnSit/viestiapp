@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="content">
+        <form id="regform" method="POST" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Register</legend>
+                <div class="form-group">
+                    {{ form.username.label(class="form-control-label")}}
+                    {{ form.username(class="form-control form-control-sm")}}
+                </div>
+                <div class="form-group">
+                    {{ form.neckname.label(class="form-control-label")}}
+                    {{ form.neckname(class="form-control form-control-sm")}}
+                </div>
+                <div class="form-group">
+                    {{ form.gender.label(class="form-control-label")}}
+                    {{ form.gender(class="form-control form-control-sm")}}
+                </div>
+                <div class="form-group">
+                    {{ form.location.label(class="form-control-label")}}
+                    {{ form.location(class="form-control form-control-sm")}}
+                <div class="form-group">
+                    {{ form.description.label(class="form-control-label")}}
+                    {{ form.description(class="form-control form-control-sm")}}
+                </div>
+                <div class="form-group">
+                    {{ form.age.label(class="form-control-label")}}
+                    {{ form.age(class="form-control form-control-sm")}}
+                </div>
+                <div class="form-group">
+                    {{ form.email.label(class="form-control-label")}}
+                    {{ form.email(class="form-control form-control-sm")}}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label(class="form-control-label")}}
+                    {{ form.password(class="form-control form-control-sm")}}
+                </div>
+                <div class="form-group">
+                    {{ form.image_file.label(class="form-control-label")}}
+                    {{ form.image_file(class="form-control-file form-control-file-sm")}}
+                    {% if form.image_file.errors %}
+                        {% for error in form.image_file.errors %}
+                            <span class="text-danger">{{ error }}</span><br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-success full-width")}}<br>
+                    Already a member: <a class="text-white" href="{{ url_for('login') }}">Login</a>
+                </div>
+           
+            
+            
+            <small class="text-white test">
+                
+            </small>
+      </fieldset>
+    </div>
+    </form>
+</div>    
+
+{% endblock %}
