@@ -21,7 +21,8 @@ else:
     debug = False
     SECRET_KEY = os.environ.get("SECRET_KEY")
     DATABASE_URL = os.environ.get("DATABASE_URL")
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    #SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
     MAIL_SERVER = os.environ.get("MAIL_SERVER")
     MAIL_PORT = os.environ.get("MAIL_PORT")
     MAIL_ADDRESS = os.environ.get("MAIL_USERNAME")
